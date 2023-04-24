@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="ForgetMeNotEd.View.LoginPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="LoginPage">
+    <VerticalStackLayout x:Name="LoginStackLayout" WidthRequest="400">
+        <HorizontalStackLayout>
+            <Label Margin="10,20,10,0"
+                   FontSize="Medium"
+                   HorizontalOptions="Start"
+                   Text="User Name"
+                   VerticalOptions="Center"
+                   VerticalTextAlignment="Center" />
+            <Entry HorizontalOptions="End"
+                   Placeholder="User Name"
+                   Text="{Binding Name}"
+                   WidthRequest="150" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Margin="10,10,10,0"
+                   FontSize="Medium"
+                   HorizontalOptions="Start"
+                   Text="Password"
+                   VerticalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   WidthRequest="150" />
+            <Frame BorderColor="Blue" CornerRadius="5">
+                <Entry Margin="-26,10,10,0"
+                       HorizontalOptions="End"
+                       IsPassword="True"
+                       Placeholder="Password"
+                       Text="{Binding Password}"
+                       WidthRequest="150" />
+            </Frame>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="10,10,10,0">
+            <Button Margin="5"
+                    BackgroundColor="Gray"
+                    Command="{Binding SubmitCommand}"
+                    Text="Submit" />
+            <Button Margin="5"
+                    BackgroundColor="Gray"
+                    Clicked="OnCreate"
+                    Text="Create Account" />
+            <Button Margin="5"
+                    BackgroundColor="Gray"
+                    Clicked="OnForgotPassword"
+                    Text="Forgot Password" />
+        </HorizontalStackLayout>
+        <Label x:Name="CreateAccount" Text="" />
+        <BoxView Margin="0,20"
+                 CornerRadius="20"
+                 HeightRequest="3"
+                 WidthRequest="400"
+                 Color="Red" />
+        <Frame BorderColor="Blue"
+               CornerRadius="10"
+               HasShadow="True"
+               HeightRequest="100"
+               WidthRequest="100">
+            <Frame.Background>
+                <LinearGradientBrush EndPoint="2,0">
+                    <GradientStop Offset="0.3" Color="Yellow" />
+                    <GradientStop Offset="0.1" Color="Red" />
+                </LinearGradientBrush>
+            </Frame.Background>
+        </Frame>
+        <Frame BorderColor="Blue"
+               CornerRadius="10"
+               HasShadow="True"
+               HeightRequest="100"
+               WidthRequest="100">
+            <Frame.Background>
+                <RadialGradientBrush>
+                    <GradientStop Offset="0.8" Color="Yellow" />
+                    <GradientStop Offset="0.5" Color="Red" />
+                </RadialGradientBrush>
+            </Frame.Background>
+        </Frame>
+
+        <Label Margin="0,20,0,0"
+               HorizontalOptions="CenterAndExpand"
+               Text="Here goes my introduction"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Start"
+               WidthRequest="400" />
+        <!--<ActivityIndicator IsRunning="{Binding ActivityIndicatorIsRunning}" Color="Blue" />-->
+        <!--<ProgressBar Margin="0,20,0,0" x:Name="LoginProgressBar" ProgressColor="Blue" />-->
+    </VerticalStackLayout>
+</ContentPage>
