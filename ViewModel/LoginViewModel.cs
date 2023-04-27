@@ -1,12 +1,7 @@
-﻿using CommunityToolkit.Maui.Behaviors;
+﻿using ForgetMeNotEd.View;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+
 
 namespace ForgetMeNotEd.ViewModel
 {
@@ -15,20 +10,21 @@ namespace ForgetMeNotEd.ViewModel
     {
         [ObservableProperty] private string name;
         [ObservableProperty] private string password;
-        [ObservableProperty] private string submitCommand;
+        // [ObservableProperty] private string submitCommand; // not necessary
         [ObservableProperty] private bool activityIndicatorIsRunning = true;
-    }
-    [RelayCommand]
-    private async void Submit()
-    {
-        for (var i = 0.0; i < 1.0; i += 0.1)
-        {
-            await LoginPage.LoginProgressBar.ProgressTo(i, 500, Easing.Linear);
-        }
-        await Application.Current.MainPage.DisplayAlert(
-        "Submit",
-        $"You entered {Name} and {Password}",
-        "OK");
 
+        [RelayCommand]
+        private async void Submit()
+        {
+            for (var i = 0.0; i < 1.0; i += 0.1)
+            {
+                await LoginPage.LoginProgressBar.ProgressTo(i, 500, Easing.Linear);
+            }
+            await Application.Current.MainPage.DisplayAlert(
+            "Submit",
+            $"You entered {Name} and {Password}",
+            "OK");
+
+        }
     }
 }
