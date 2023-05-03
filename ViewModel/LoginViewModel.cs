@@ -1,6 +1,8 @@
 ﻿using ForgetMeNotEd.View;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
+using System.Windows.Input;
 
 
 namespace ForgetMeNotEd.ViewModel
@@ -26,5 +28,11 @@ namespace ForgetMeNotEd.ViewModel
             "OK");
 
         }
+        [RelayCommand]
+        private void Create()
+        {
+            WeakReferenceMessenger.Default.Send(new ConstructMessage());
+        }
     }
+    
 }

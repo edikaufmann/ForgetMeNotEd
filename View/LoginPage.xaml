@@ -2,6 +2,7 @@
 <ContentPage x:Class="ForgetMeNotEd.View.LoginPage"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              Title="LoginPage">
     <VerticalStackLayout x:Name="LoginStackLayout" WidthRequest="400">
         <HorizontalStackLayout>
@@ -40,7 +41,7 @@
                     Text="Submit" />
             <Button Margin="5"
                     BackgroundColor="Gray"
-                    Clicked="OnCreate"
+                    Command="{Binding CreateCommand}"
                     Text="Create Account" />
             <Button Margin="5"
                     BackgroundColor="Gray"
